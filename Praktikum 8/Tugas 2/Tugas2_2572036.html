@@ -1,0 +1,60 @@
+<!-- 2572036 - Timothy -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - 2572036</title>
+</head>
+
+<body>
+    <h1><b>Quiz Matematika</b></h1>
+    <p>Klik tombol di bawah untuk mulai mengerjakan soal matematika acak. Ketik "exit atau tekan Cancel untuk berhenti."
+    </p>
+    <button onclick="mulaiQuiz()">Mulai Quiz</button>
+    <h2 id="result"></h2>
+    <p id="datetime"></p>
+    <script>
+        const operasi = ['+', '-', '*'];
+        let a, b, q, t;
+        function mulaiQuiz() {
+            q = 0;
+            t = 0;
+            while (true) {
+                let index = Math.floor(Math.random() * 3);
+                a = Math.floor(Math.random() * 20) + 1;
+                b = Math.floor(Math.random() * 20) + 1;
+                let resp = prompt(`Berapa hasil dari ${a} ${operasi[index]} ${b} ?`);
+                if (resp === "exit") {
+                    document.getElementById('result').innerHTML = `<b>Skor Akhir: </b>${t}/${q}`;
+                    document.getElementById('datetime').innerHTML = `Selesai pada ${new (Date)}`;
+                    break;
+                }
+                q++;
+                switch (operasi[index]) {
+                    case "+":
+                        ans = parseInt(a) + parseInt(b);
+                        break;
+                    case "-":
+                        ans = a - b;
+                        break;
+                    case "*":
+                        ans = a * b;
+                        break;
+
+                }
+                if (resp == ans) {
+                    alert('Benar');
+                    t++;
+                }
+                else {
+                    alert(`Salah, jawaban benar ${ans}`)
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

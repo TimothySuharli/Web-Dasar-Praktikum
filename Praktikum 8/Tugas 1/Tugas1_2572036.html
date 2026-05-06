@@ -1,0 +1,59 @@
+<!-- 2572036 - Timothy Suharli -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game - 2572036</title>
+    
+    <script></script>
+</head>
+<body>
+    <div class="skor-container">
+        <img id="img-player">
+        <span id="score"></span>
+        <img id="img-bot">
+    </div>
+    <div class="button-container">
+        <button onclick="pilih(1)">gunting</button>
+        <button onclick="pilih(2)">batu</button>
+        <button onclick="pilih(3)">kertas</button>
+    </div>
+    <div id="announcement"></div>
+    
+    
+    <script>
+        let playerScore=0,botScore=0;
+        document.getElementById("score").innerHTML = (`${playerScore} - ${botScore}`)
+        let pilihanku;
+        
+        function tampilGambar(x,which){
+            document.getElementById(which).src = `${x}.png`;
+            const img = document.getElementById(which);
+            img.width = 50;
+        }
+        function pilih(x){
+            pilihanku = x;
+            tampilGambar(x,"img-player");
+            
+            let pilihanBot = Math.floor(Math.random()*3)+1;
+            tampilGambar(pilihanBot,"img-bot");
+            
+            let result = "";
+            if(pilihanku===pilihanBot){
+                result = "DRAW!";
+            }
+            else if((pilihanku==1 && pilihanBot==3)||(pilihanku==2 && pilihanBot==1)||(pilihanku==3 && pilihanBot==2)){
+                result = "PLAYER WIN!";
+                playerScore++;
+            }
+            else{
+                result = "BOT WIN!";
+                botScore++;
+            }
+            document.getElementById("announcement").innerHTML = result;
+            document.getElementById("score").innerHTML = (`${playerScore} - ${botScore}`)
+        }
+        </script>
+</body>
+</html>

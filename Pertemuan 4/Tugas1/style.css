@@ -1,0 +1,64 @@
+body{
+    padding: 20px;
+    font-family: Georgia;
+    background-color: #f5f0e8;
+    color: #333333;
+}
+
+.title{
+    color:#5c3d1e;
+    text-align: center;
+}
+
+.identity{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+    color: #888888;
+}
+
+.card{
+    width: 600px;
+    margin:auto;
+    border: 2px #c8a96e solid;
+    border-radius: 12px;
+    padding:  30px;
+}
+
+h2{
+    color:#8b0000;
+}
+
+#description{
+    color: #555555;
+    font-style: italic;
+}
+
+h3{
+    color:#5c3d1e;
+}
+
+ul > li{
+    list-style-type: style square;;
+}
+
+ul > li{
+    list-style-type: decimal;
+}
+
+a{
+    color:#8b0000;
+    text-decoration: 0;
+    padding: 10px;
+    background-color: inherit;
+    border-radius: 5px;
+}
+a:hover{
+    color: white;
+    text-decoration: 0;
+    padding: 10px;
+    background-color: #8b0000;
+    border-radius: 5px;
+}
+

@@ -1,0 +1,261 @@
+<!-- 2572036 - Timothy S. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECommerce - 2572036</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <style>
+        .custom-gradient {
+            background: linear-gradient(165deg, #6E8EFB, #A777E3);
+        }
+
+        .laptop {
+            font-size: 130px;
+        }
+
+        .card-image-top {
+            font-size: 50px;
+        }
+
+        .carousel-image {
+            font-size: 80px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+        }
+    </style>
+
+    <script>
+        function showToast() {
+            const toastEl = document.getElementById('orderToast'); 
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-black text">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light fw-bold ms-5" href="#">TechStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white-50" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled " aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-outline-info me-5"> 🕭 Enable Notifications</button>
+        </div>
+    </nav>
+
+    <div class="custom-gradient">
+        <section class="cover d-flex p-0 p-5">
+            <div class="container my-5">
+                <h1></h1><span class="badge text-bg-secondary">New Arrivals 2025</span>
+                <h1 class="fw-bold text-light">Upgrade Your Tech.</h1>
+                <h1 class="fw-bold text-light">Upgrade Your Life.</h1>
+                <p class=" fw-lighter text-light">The latest gadgets, best prices, and free delivery on all orders above
+                    Rp 500.000.</p>
+                <button type="button" class="btn btn-light fw-bold">Shop Now</button>
+                <button type="button" class="btn btn-outline-light">Learn More</button>
+            </div>
+            <div class="container my-5 text-center d-flex flex-column justify-content-center">
+                <p class="laptop">💻</p>
+            </div>
+    </div>
+    </section>
+    </div>
+
+    <section class="container py-3">
+        <h5 class="fw-bold my-4">Promo Terbaru</h5>
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner bg-warning py-5 mb-3 rounded">
+                <div class="carousel-item active text-center p-5">
+                    <p class="carousel-image">🎧</p>
+                    <h3>Aksesoris - Flash Sale Tiap Jumat</h3>
+                    <p>Headset, mouse, keyboard - semua serba murah!</p>
+                </div>
+                <div class="carousel-item text-center py-5">
+                    <p class="carousel-image">📱</p>
+                    <h3>Diskon gadget 35%</h3>
+                    <p>Diskon HP, Tablet, dan Laptop - Khusus pengguna baru!</p>
+                </div>
+                <div class="carousel-item text-center py-5">
+                    <p class="carousel-image">💻</p>
+                    <h3>Weekend Sale 5%</h3>
+                    <p>Diskon 5% setiap akhir pekan</p>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <h5 class="fw-bold my-4">Produk</h5>
+
+        <div class="container row justify-content-center gap-3">
+            <div class="card col-md-4 shadow-sm p-0" style="width: 18rem;">
+                <div class="container bg-primary p-4 rounded-top">
+                    <p class="my-0 text-center card-image-top">💻</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">HP Notbuk 45 pro</h5>
+                    <p class="card-text">
+                        Storage 512gb
+                        RAM 8gb
+                        8000mAh Another one from HP
+                    </p>
+                    <p class="card-text fw-bold">Rp 8.000.000</p>
+                    <a href="#" onClick="showToast()" class="belanja btn btn-primary d-flex justify-content-center">Add to Card</a>
+                </div>
+            </div>
+            <div class="card col-md-4 shadow-sm p-0" style="width: 18rem;">
+                <div class="container bg-success p-4 rounded-top">
+                    <p class="my-0 text-center card-image-top">💻</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Macbook 11 pro</h5>
+                    <p class="card-text">
+                        1TB storage
+                        16GB RAM
+                        10.000mAh battery life
+                    </p>
+                    <p class="card-text fw-bold">Rp 20.000.000</p>
+                    <a href="#" onClick="showToast()" class="belanja btn btn-success d-flex justify-content-center">Add to Card</a>
+                </div>
+            </div>
+            <div class="card col-md-4 shadow p-0" style="width: 18rem;">
+                <div class="container bg-warning p-4 rounded-top">
+                    <p class="my-0 text-center card-image-top">💻</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">HP ThinkPad 10X</h5>
+                    <p class="card-text">
+                        RAM 1mb
+                        Storage 10kb
+                        Antique series'    
+                    </p>
+                    <p class="card-text fw-bold">Rp 2.000.000</p>
+                    <a href="#" onClick="showToast()" class="belanja btn btn-warning d-flex justify-content-center">Add to Card</a>
+                </div>
+            </div>
+        </div>
+
+        <h5 class="fw-bold my-4">FAQ</h5>
+
+        <div class="accordion shadow-sm" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        Berapa lama estimasi pengiriman?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        Pengiriman dalam kota memakan waktu 1-2 hari kerja. Pengiriman luar kota 3-5 hari kerja
+                        tergantung lokasi. Kami menggunakan kurir terpercaya seperti JNE, J&T, dan SiCepat.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        Apakah produk yang dijual bergaransi resmi?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Ya! Semua produk kami memiliki garansi resmi dari distributor. Laptop dan smartphone mendapatkan
+                        garansi 1 tahun, sementara aksesoris 6 bulan.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        Bagaimana cara melakukan retur produk?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Retur dapat dilakukan dalam 7 hari setelah produk diterima, selama produk masih dalam kondisi
+                        asli dan belum digunakan. Hubungi customer service kami melalui email atau WhatsApp.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container border border-top-0 my-4 py-3 rounded shadow-sm">
+            <h3 class="fw-bold">About Tech</h3>
+            <p>TechStore adalah toko gadget online terpercaya yang menyediakan produk elektronik berkualitas dengan
+                harga kompetitif. Berdiri sejak 2019, kami telah melayani lebih dari 50.000 pelanggan di seluruh
+                Indonesia
+
+                2572036 - Timothy Suharli
+            </p>
+        </div>
+    </section>
+
+    <div class="toast position-fixed bottom-0 end-0 p-3 dan z-index: 1100 bg-success" role="alert" aria-live="assertive"
+        aria-atomic="true" id="orderToast">
+        <div class="toast-header rounded bg-light-secondary">
+            <strong class="me-auto">System</strong>
+            <small class="text-body-secondary">Just now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body text-bg-success">
+            Produk berhasil ditambahkan ke keranjang!
+        </div>
+    </div>
+
+    <section class="cover bg-black text-light d-flex justify-content-center py-3">
+        &copy; TechStore | 2572036 - Timothy Suharli
+    </section>
+
+</body>
+
+</html>

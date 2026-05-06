@@ -1,0 +1,152 @@
+body{
+    width:100vw;
+    padding: 0px;
+    margin: 0px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+table{
+    border: none;
+    width: 100%;
+    border-spacing: 0px;
+}
+
+.heading{  
+    width:100vw;
+}
+
+.heading.td{
+    text-align: center;
+    width: 100%;
+}
+
+img{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 500px;
+    height: 500px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.home-button{
+    text-align: center;
+    padding: 0px;
+    width:33%;
+    border-spacing: 0px;
+}
+
+.home-button a{
+    font-size: medium;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display:block;
+    color: white;
+    background-color: #282b30;
+}
+
+.home-button:hover a{
+    background-color: #393e45;
+}
+
+.home-button:active a{
+    background-color: #7289da;
+}
+
+.home-button:visited a{
+    background-color: #282b30;
+}
+
+button{
+    text-align: center;
+    width:250px;
+    height:50px;
+    border-radius:100px;
+    border:1px solid black;
+    font-weight:bold;
+    font-size: large;
+    background-color:#282b30;
+    color:white;
+    margin-bottom: 10px;
+}
+
+button:hover{
+    background-color: white;
+    color:black;
+}
+
+button#Fire{
+    background-color: #f24405;
+}
+button#Fire:hover{
+    background-color: white;
+    color: #f24405;
+}
+
+button#Water{
+    background-color: #2389da;
+}
+button#Water:hover{
+    background-color:white;
+    color: #2389da;
+}
+
+button#Grass{
+    background-color: #107800;
+}
+button#Grass:hover{
+    background-color:white;
+    color: #107800;
+}
+
+button#Poison{
+    background-color: #7b63ad;
+}
+button#Poison:hover{
+    background-color:white;
+    color: #7b63ad;
+}
+
+#Name{
+    font-family: Georgia;
+    font-size: larger;
+    font-weight: bold;
+}
+#Stats{
+    font-weight: 900;
+    font-family: cursive;
+}
+
+#Stats td:nth-child(odd){
+    text-align: right;
+}
+#Stats td:nth-child(even){
+    text-align: left;
+}
+
+.content{
+    width:100%;
+}
+
+.content td{
+    text-align: center;
+    width:50%;
+}
+
+#Charmander{
+    background-color: #fe9441; 
+}
+#Squirtle{
+    background-color: #93c8d0;
+}
+#Bulbasaur{
+    background-color: #83ba36;
+}
+
+#footer{
+    Font-size:20px;
+    Text-align: center;
+    Font-weight:bold;
+}

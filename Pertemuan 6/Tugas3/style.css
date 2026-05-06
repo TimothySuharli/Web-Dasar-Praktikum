@@ -1,0 +1,134 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial; }
+
+nav{
+    padding: 15px 0;
+    background-color: #0d0d0d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo{
+    margin-left: 10px;
+    color: #e50914;
+}
+
+nav ul{
+    display: flex;
+    gap: 20px;
+}
+
+nav li{
+    list-style: none;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    gap: 16px;
+}
+
+.btn-login{
+    background-color: #e50914;
+    margin-right: 10px;
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+.hero{
+    background-color:  #141414;
+    color: white;
+    display: flexbox;
+    flex-direction: column;
+    gap: 16px;
+    padding: 80px 40px; 
+}
+.hero h1{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero button{
+    margin-top: 10px;
+    background-color: #e50914;
+    display: flex;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 6px;
+}
+
+.films-section{
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px;     
+}
+
+.films-section h2{
+    margin-bottom: 20px;
+}
+
+.films-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.film-card{
+    background-color: #222;
+    border-radius: 10px; 
+    overflow: hidden;
+}
+
+.film-card:hover{
+    transform: scale(1.05);
+    transition: ease(0.2s);
+}
+
+.poster{
+    height: 160px;
+    background-image: linear-gradient(180deg,#323232,black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.info{
+    padding: 12px;
+    background-color: #2d2d2d;
+}
+
+footer{
+    background-color: #0d0d0d;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+}
+
+@media(max-width: 1024px){
+    .films-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .btn-login{
+        display: none;
+    }
+    nav ul{
+        margin-right: 20px;
+    }
+}
+@media(max-width: 600px){
+    .films-grid{
+        grid-template-columns: 1fr;
+    }
+    nav{
+        flex-direction: column;
+    }
+    .hero{
+        padding: 60px 20px;
+    }
+    nav ul{
+        margin-top: 20px;
+    }
+}

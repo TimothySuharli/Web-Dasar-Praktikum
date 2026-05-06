@@ -1,0 +1,152 @@
+<!-- 2572036 - Timothy Suharli -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSkill - 2572036</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+    <style>
+        @media(max-width:800px){
+            #menu{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand text-primary ms-5" href="#">EduSkill</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Daftar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mentor</a>
+                    </li>
+                </ul>
+            </div>
+            <button type="button" id="menu" class="btn text-light bg-primary me-5">Daftar Sekarang</button>
+        </div>
+    </nav>
+
+    <section class="cover d-flex bg-primary p-5">
+        <div class="container text-center py-5">
+            <h1 class="text-light mb-4 fw-bold">Tingkatkan Karirmu di Dunia Digital</h1>
+            <p class="text-light mb-4">Akses ratusan materi pembelajaran dari mentor berpengalaman di
+                industri.</p>
+            <button type="button" class="btn my-2 text-primary btn-light me-3 fw-bold">Jelajahi Kelas</button>
+            <button type="button" class="btn my-2 btn-outline-light">Pelajari Sistemnya</button>
+        </div>
+    </section>
+
+    <section class="bg-light pt-4">
+        <div class="container text-center">
+            <h2 class="text-bold fw-bold">Kelas Populer Bulan Ini</h2>
+            <p>Pilih kelas yang sesuai dengan minatmu</p>
+        </div>
+
+        <div class="container d-flex gap-3">
+            <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                    <span class="badge text-bg-success mb-3 fw-bold">Pemula</span>
+                    <h5 class="card-title fw-bold">Fullstack Web Development</h5>
+                    <p class="card-text">Belajar membuat website dari nol menggunakan HTML, CSS, JS, dan
+                        PHP.</p>
+                    <p class="card-text text-primary fw-bold">Rp. 499.000</p>
+                    <div class="d-grid">
+                        <button class="btn btn-outline-primary" type="button">Lihat Silabus</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                    <span class="badge text-bg-warning mb-3 fw-bold">Menengah</span>
+                    <h5 class="card-title fw-bold">Data Analytics for Business</h5>
+                    <p class="card-text">Kuasai pengolahan data menggunakan Python dan buat visualisasi menarik.</p>
+                    <p class="card-text text-primary fw-bold">Rp. 599.000</p>
+                    <div class="d-grid">
+                        <button class="btn btn-outline-primary" type="button">Lihat Silabus</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                    <span class="badge text-bg-success mb-3 fw-bold">Pemula</span>
+                    <h5 class="card-title fw-bold">UI/UX Design Mastery</h5>
+                    <p class="card-text">Pahami riset pengguna dan buat desain antarmuka aplikasi menggunakan Figma.</p>
+                    <p class="card-text text-primary fw-bold">Rp. 450.000</p>
+                    <div class="d-grid">
+                        <button class="btn btn-outline-primary" type="button">Lihat Silabus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 mb-5">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <!-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div> -->
+            <div class="carousel-inner mt-2">
+                <div class="carousel-item active">
+                    <div class="container text-center">
+                        <p class="fst-italic">"Lorem Ipsum"</p>
+                        <p>- Some random greek guy</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container text-center">
+                        <p class="fst-italic">"It was not me gng"</p>
+                        <p>- The wind</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container text-center">
+                        <p class="fst-italic">"I am groot"</p>
+                        <p>- Groot</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark rounded-circle aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <!------------------------------------->
+
+
+    <footer class="text-center">
+        <p>&copy; 2026 2572036 Timothy. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

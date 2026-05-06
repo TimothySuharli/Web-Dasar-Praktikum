@@ -1,0 +1,143 @@
+<!-- 2572036 - Timothy Suharli -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenRGB - 2572036</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eee;
+            transition: ease 0.5s;
+        }
+
+        .card {
+            display: flex;
+            width: 400px;
+            padding: 10px 25px;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            box-shadow: 0px 5px 10px 3px lightgray;
+            background-color: white;
+        }
+
+        .rgb-group {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        input {
+            border-radius: 3px;
+            border: 1px solid #ddd;
+            padding: 5px 5px;
+        }
+
+        button {
+            border: 0px;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 3px;
+            background-color: #ddd;
+        }
+
+        .display-area {
+            margin: 15px 0px;
+            padding: 10px 0px;
+            text-align: center;
+            width: 100%;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+        }
+
+        #counter {
+            font-size: 45px;
+            font-weight: bolder;
+        }
+
+        .btn-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-reset {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            margin-top: 15px;
+            border-top: 1px solid lightgray;
+            padding: 10px;
+            font-size: small;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>RGB Control Panel</h1>
+        <div class="rgb-group">
+            <input type="number" id="r" class="rgb-input" placeholder="R" min="0" max="255">
+            <input type="number" id="g" class="rgb-input" placeholder="G" min="0" max="255">
+            <input type="number" id="b" class="rgb-input" placeholder="B" min="0" max="255">
+        </div>
+        <div class="btn-container">
+            <button class="btn-submit" onclick="submit()">Terapkan</button>
+            <button class="btn-random" onclick="random()">Acak Warna</button>
+        </div>
+        <div class="display-area">
+            <div>Skor Saat Ini:</div>
+            <div id="counter">0</div>
+        </div>
+        <div class="btn-container">
+            <button class="btn-add" onclick="add()">Tambah (+1)</button>
+            <button class="btn-remove" onclick="subtract()">Kurang (-1)</button>
+        </div>
+        <button class="btn-reset" onclick="reset()">Reset Ke Default</button>
+        <div class="footer">
+            <strong>&copy; 2026 2572036 - Timothy Suharli. All rights reserved.</strong>
+        </div>
+    </div>
+
+    <script>
+        let counter = 0;
+        function random(){
+            document.getElementById('r').value = Math.floor(Math.random()*256);
+            document.getElementById('g').value = Math.floor(Math.random()*256);
+            document.getElementById('b').value = Math.floor(Math.random()*256);
+        }
+        function submit(){
+            document.body.style.backgroundColor = (`rgb(${document.getElementById('r').value},${document.getElementById('g').value},${document.getElementById('b').value})`);
+        }
+        function add(){
+            document.getElementById('counter').textContent = ++counter;
+        }
+        function subtract(){
+            if (counter>0){
+                document.getElementById('counter').textContent = --counter;
+            }
+        }
+        function reset(){
+            document.getElementById('r').value = '';
+            document.getElementById('g').value = '';
+            document.getElementById('b').value = '';
+            counter = 0;
+            document.getElementById('counter').textContent = counter;
+        }   
+    </script>
+</body>
+
+</html>
