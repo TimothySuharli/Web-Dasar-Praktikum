@@ -1,0 +1,116 @@
+<!-- 2572036 - Timothy S. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator - 2572036</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: lightgray;
+        }
+
+        #container {
+            padding: 20px 20px 0px 20px;
+            width: 400px;
+            height: auto;
+            border-radius: 7px;
+            background-color: white;
+            margin-top: 10px;
+        }
+        .conv-container{
+            background-color: lightgray;
+            border-radius: 3px;
+            margin-top: 15px;
+            padding: 15px;
+            height: 125px;
+        }
+        .conv-container .h10{
+            margin-top: 0px;
+        }
+        .h10 {
+            font-weight: bold;
+        }
+        .footer{
+            margin-top: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2>Temperature Calculator</h2>
+        <p class="h10">Dari Suhu:</p>
+        <select name="suhu" onchange="calculate()" id="from_x">
+            <option value="c">Celcius (°C)</option>
+            <option value="f">Fahrenhet (°F)</option>
+            <option value="k">Kelvin (K)</option>
+        </select>
+
+        <p class="h10">Nilai:</p>
+        <input type="number" oninput="calculate()" placeholder="Masukkan angka..." id="temp_val">
+
+        <div class="conv-container">
+            <p class="h10">Hasil Konversi:</p>
+            <div id="result">Masukkan nilai untuk melihat hasil.</div>
+        </div>
+        <p class="footer">&copy; 2026 2572036 - Timothy S. All rights reserved.</p>
+    </div>
+
+    <script>
+        let c, f, k;
+        let res = document.getElementById('result')
+
+        function calculate() {
+            let from = document.getElementById('from_x').value;
+            let temp = document.getElementById('temp_val').value;
+            console.log(temp);
+            res.innerHTML = '';
+            temp = parseFloat(temp)
+            let z = document.createElement("p");
+            let a = document.createElement("p");
+            let b = document.createElement("p");
+            switch (from) {
+                case 'c':
+                    f = (temp * 9 / 5) + 32;
+                    z.innerHTML = `Suhu celcius ${temp}`;
+                    a.innerHTML = `Suhu fahrenheit ${f}`;
+                    k = temp + 273;
+                    b.innerHTML = `Suhu kelvin ${k}`;
+                    break;
+                case 'f':
+                    c = (temp - 32) * 5 / 9;
+                    z.innerHTML = `Suhu fahrenheit ${temp}`;
+                    a.innerHTML = `Suhu celcius ${c}`;
+                    k = c + 273;
+                    b.innerHTML = `Suhu kelvin ${k}`;
+                    break;
+                case 'k':
+                    c = temp - 273;
+                    z.innerHTML = `Suhu kelvin ${temp}`;
+                    a.innerHTML = `Suhu celcius ${c}`
+                    f = (c * 9 / 5) + 32;
+                    b.innerHTML = `Suhu fahrenheit ${f}`
+                    break;
+            }
+            
+            if (isNaN(temp)) { 
+                document.getElementById('result').innerHTML = "Masukkan nilai untuk melihat hasil...";
+                z.innerHTML = '';
+                a.innerHTML = '';
+                b.innerHTML = '';
+            }
+            else{
+                res.appendChild(z);
+                res.appendChild(a);
+                res.appendChild(b);
+            }
+        }
+    </script>
+</body>
+
+</html>

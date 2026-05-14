@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--<input type="text" id="isian" onfocus="cek()" onblur="cek2()">-->
+<button id="btn1">Click me!</button>
+<button id="btn2" onclick="sapa()">Click me again!</button>
+<div id="time-left"></div>
+<button onclick="tambah()">Tambah</button>
+<button onclick="hapus()">Hapus</button>
+<div class="container">
+    <div id="target">ini target</div>
+</div>
+
+<script>
+    let container = document.querySelector(".container");
+    function tambah() {
+        const divBaru = document.createElement("div");
+        divBaru.className = "divBaru";
+        divBaru.style.border = "1px solid blue";
+        
+        let pBaru = document.createElement("p");
+        pBaru.innerText = 'ini div baru';
+
+        divBaru.appendChild(pBaru);
+        container.appendChild(divBaru);
+    }
+    
+    function hapus() {
+        let korban = document.querySelector("#target");
+        container.removeChild(korban);
+    }
+
+    const timeDisplay = document.getElementById('time-left');
+        let gameTimer, timeLeft=10;
+        document.querySelector("#btn1").addEventListener("click",()=>{
+
+            timeDisplay.innerText = timeLeft;
+
+            gameTimer = setInterval(() => {
+                timeLeft--;
+                timeDisplay.innerText = timeLeft;
+                if (timeLeft <= 0) endGame();
+            }, 1000);
+        });
+
+        function endGame() {
+            clearInterval(gameTimer);
+            alert("Waktu habis!");
+        }
+
+    //setTimeout("sapa()", 5000);
+    //setInterval("sapa()", 2000);
+
+    /*function sapa() {
+        console.log("hai");
+    }
+    function cek() {
+        console.log('harus isi');
+    }
+    function cek2() {
+        var isi = document.getElementById('isian').value;
+        alert(isi);
+    }
+    document.querySelector("#btn1").addEventListener("click", ()=> {
+        console.log("ini pakai event listener");
+    });
+    function sapa() {
+        console.log("ini pakai event onclick");
+    }
+
+    var data = ['Abdan', 'Alifi', 'Kevin', 'Rafael', 'Varrel'];
+    for(var i=0; i<data.length; i++) {
+        console.log(data[i]);
+    }
+    console.log("-------------")
+    data.forEach((item)=>{
+        console.log(item);
+    });
+
+    var nama = "Maresha";
+    console.log(nama[1]);
+    console.log(nama.indexOf('M'));
+
+    var hari = ['Minggu', 'Senin', 'Selasa', 'Rabu'];
+    console.log(hari[2]);
+    hari.push('Kamis');
+    console.log(hari.length);
+    console.log(hari);
+    var hari2 = ['Jumat', 'Sabtu'];
+    var hari3 = hari.concat(hari2);
+    var hari4 = hari2.join();
+    console.log(hari3);
+    console.log(hari4);
+    console.log(hari4.length);
+    console.log(hari4[5]);*/
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shape Clicker Game</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: sans-serif;
+            overflow: hidden;
+            /* Supaya tidak ada scroll saat box muncul */
+        }
+
+        .message {
+            text-align: center;
+            padding: 10px;
+            font-size: 1.5rem;
+            height: 60px;
+        }
+
+        .stats {
+            text-align: center;
+            color: #ffeb3b;
+            font-size: 1.2rem;
+        }
+
+        .output {
+            width: 100vw;
+            height: calc(100vh - 150px);
+            position: relative;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            display: none;
+            cursor: pointer;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body onload="ulang()">
+    <div class="output"></div>
+
+    <script>
+		const output = document.querySelector(".output");
+		const box = document.createElement("div");
+        var score,timer;
+
+		
+        function ulang() {
+			box.classList.add("box");
+			output.append(box);
+
+			// Langsung tampilkan box pertama untuk trigger start
+			box.style.display = "block";
+			box.style.top = "50px";
+			box.style.left = "45%";
+			box.style.textAlign = "center";
+			box.style.lineHeight = "100px";
+			
+			addBox()
+
+			setTimeout("ulang()", 1000);
+		}
+
+        function randomNumbers(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function addBox() {
+
+            const dimX = randomNumbers(50) + 10;
+			const dimY = randomNumbers(50) + 10;
+
+            box.style.display = "block";
+            box.style.width = `${dimX}px`;
+            box.style.height = `${dimY}px`;
+            box.style.backgroundColor = "#" + Math.random().toString(16).substr(-6);
+
+            // Pastikan posisi tetap di dalam kontainer output
+            box.style.left = randomNumbers(900) + "px";
+            box.style.top = randomNumbers(600) + "px";
+            box.style.borderRadius = randomNumbers(50) + "%";
+        }
+    </script>
+</body>
+
+</html>

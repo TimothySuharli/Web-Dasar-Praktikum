@@ -1,0 +1,148 @@
+<!-- 2572036 - Timothy S. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game - 2572036</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: sans-serif;
+            overflow: hidden;
+            /* Supaya tidak ada scroll saat box muncul */
+        }
+
+        .message {
+            text-align: center;
+            padding: 10px;
+            font-size: 1.5rem;
+            height: 60px;
+        }
+
+        .stats {
+            text-align: center;
+            color: #ffeb3b;
+            font-size: 1.2rem;
+        }
+
+        .output {
+            width: 100vw;
+            height: calc(100vh - 150px);
+            position: relative;
+        }
+        #start-btn{
+            position: absolute;
+            color: white;
+            border: 1px solid white;
+            top: 50px;
+            left: 45vw;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            display: none;
+            cursor: pointer;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="message">Press the box to start!</div>
+    <div class="stats">Time: 30s</div>
+    <div class="output">
+        <div id="start-btn" onclick="startGame()">START</div>
+        <div id="box"></div>
+    </div>
+
+    <script>
+        var score = 0;
+        const output = document.querySelector(".output");
+        const box = document.getElementById('box');
+        const startBtn = document.getElementById('start-btn');
+        const timeDisplay = document.querySelector('.stats');
+        
+        let gameTimer, timeLeft = 30;
+        
+        function endGame() {
+            clearInterval(gameTimer);
+            box.style.display = "none";
+            document.querySelector(".message").innerHTML = `Total clicks: ${score}`;
+            timeDisplay.innerHTML = "Time: 30";
+            addRetry();
+        }
+
+        function ulang() {
+            box.classList.add("box");
+
+            if (timeLeft <= 0) {
+                box.style.display = "none";
+                return;
+            }
+            addBox();
+
+            setTimeout("ulang()",1000);
+        }
+
+        box.addEventListener('click', () => {
+            score++;
+            addBox();
+        });
+
+        
+        function randomNumbers(max) {
+            return Math.floor(Math.random() * max);
+        }
+        
+        function addBox() {
+            
+            const dimX = randomNumbers(50) + 10;
+			const dimY = randomNumbers(50) + 10;
+            
+            box.style.display = "block";
+            box.style.width = `${dimX}px`;
+            box.style.height = `${dimY}px`;
+            box.style.backgroundColor = "#" + Math.random().toString(16).substr(-6);
+            
+            // Pastikan posisi tetap di dalam kontainer output
+            box.style.left = randomNumbers(900) + "px";
+            box.style.top = randomNumbers(600) + "px";
+            box.style.borderRadius = randomNumbers(50) + "%";
+        }
+
+        function addRetry() {
+            startBtn.style.display = 'block';
+            startBtn.style.width = '80px';
+            startBtn.style.height = '80px';
+            startBtn.style.backgroundColor = "#" + Math.random().toString(16).substr(-6);
+            startBtn.innerText = 'AGAIN?';
+        }
+
+        function startGame(){
+            startBtn.style.display = 'none';
+            score = 0;
+            timeLeft = 30;
+            setTimeout(ulang, 100);
+            
+            document.querySelector('.message').innerHTML = "Click as fast as you can!"
+            gameTimer = setInterval(() => {
+                timeLeft--;
+                timeDisplay.innerText = `Time: ${timeLeft}`;
+                if (timeLeft <= 0) endGame();
+            }, 1000);
+        }
+
+        </script>
+</body>
+
+</html>
